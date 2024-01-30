@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     parser: '@babel/eslint-parser',
     parserOptions: {
       ecmaVersion: 2021,
