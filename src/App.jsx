@@ -1,13 +1,14 @@
 import './App.css'
+import { Fragment } from 'react'
+
+import LandingPage from './components/landing'
 
 function App() {
 
   return (
-    <>
-      <div>
-        Initial page load
-      </div>
-    </>
+    <Fragment>
+      <LandingPage/>
+    </Fragment>
   )
 }
 
