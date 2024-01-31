@@ -4,12 +4,17 @@ import App from './App.jsx'
 import './index.css'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import LoginPage from './components/login.jsx'
+import { GoogleOAuthProvider } from '@react-oauth/google'
+import Users from './components/home.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <HashRouter future={{ v7_startTransition: true }}>
-    <Routes>
-      <Route path='/' element={<App />} ></Route>
-      <Route path='/login' element={<LoginPage/>} ></Route>
-    </Routes>
+    <GoogleOAuthProvider clientId='762829273522-ln1t6hmofdaokhllpkl72v095clfclor.apps.googleusercontent.com' >
+      <Routes>
+        <Route path='/' element={<App />} ></Route>
+        <Route path='/login' element={<LoginPage />} ></Route>
+        <Route path='/home' element={<Users/>} ></Route>
+      </Routes>
+    </GoogleOAuthProvider>
   </HashRouter>,
 )
