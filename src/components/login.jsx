@@ -12,6 +12,8 @@ const LoginPage = () => {
     const handleSuccess = (credentialResponse) => {
     
         navigate("/home");
+
+        localStorage.setItem("userCredentials", JSON.stringify(credentialResponse.credential));
     }
     
     return (
@@ -23,7 +25,7 @@ const LoginPage = () => {
                     </h3>
                     <div className="google-login-btn">
                         <GoogleLogin onSuccess={handleSuccess} onError={() => { console.log("Login Failed") }} text="signin_with" type="standard"
-                        theme="filled_blue"  size="large" shape="pill" logo_alignment="center"/>
+                        theme="filled_blue"  size="large" shape="pill" logo_alignment="center"  />
                     </div>
                 </section>
             </main>
