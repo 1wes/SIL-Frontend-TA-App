@@ -26,7 +26,7 @@ const Album = () => {
     const albumId = useParams().albumId;
 
     const { data: albumDetails } = useSWR(`http://localhost:5000/api/albums/${albumId}`, fetcher);
-    const { data: photosList } = useSWR(`http://localhost:5000/api/photos/${albumId}`, fetcher);
+    const { data: photosList } = useSWR(`http://localhost:5000/api/photos/album/${albumId}`, fetcher);
 
     useEffect(() => {
         
