@@ -81,7 +81,7 @@ const UserAlbums = ({userId}) => {
     return (
         
         <Fragment>
-            <ul className='user-cards'>
+            <ul className='albums-list'>
                 {albumsList}
             </ul>
         </Fragment>
