@@ -2,10 +2,7 @@
     min-height: 100vh;
 }
 
-.page-header{
-    text-align: left;
-    font-size: 50px;
-}
+
 
 .user-cards{
     display: flex;
