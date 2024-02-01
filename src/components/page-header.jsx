@@ -1,5 +1,7 @@
 import { Fragment } from 'react';
 
+import './page-header.css'
+
 const PageHeader = ({header}) => {
     
     return (
