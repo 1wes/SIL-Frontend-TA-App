@@ -2,7 +2,7 @@
     min-height: 100vh;
 }
 
-.users-component h1{
+.page-header{
     text-align: left;
     font-size: 50px;
 }
