@@ -2,7 +2,7 @@ import axios from "axios";
 import { config } from "dotenv";
 
 const axiosInstance = axios.create({
-    baseURL: "https://sil-ta-api.onrender.com/"
+    baseURL: "http://localhost:5000/"
 });
 
 axiosInstance.interceptors.request.use(
