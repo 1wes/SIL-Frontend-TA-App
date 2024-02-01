@@ -9,6 +9,8 @@ import useSWR from 'swr';
 
 import UserCard from "./user-card";
 
+import PageHeader from "./page-header";
+
 const fetcher=url=>axios.get(url).then(response=>response.data)
 
 const Users = () => {
@@ -36,9 +38,7 @@ const Users = () => {
     return (
         <Fragment>
             <main className="users-component">
-                <h1>
-                    Users
-                </h1>
+                <PageHeader header={`Users`} />
                 <ul className="user-cards">
                     {usersList}
                 </ul>
