@@ -8,7 +8,7 @@ import { Button } from "@mui/material";
 
 import { Link } from "react-router-dom";
 
-const UserCard = ({name, noOfAlbums, albumsLink}) => {
+const UserCard = ({name, noOfAlbums, albumsLink, buttonText}) => {
     
     return (
         <Fragment>
@@ -21,7 +21,7 @@ const UserCard = ({name, noOfAlbums, albumsLink}) => {
                     <Link to={albumsLink} >
                         <Button style={{ textTransform: "Capitalize", marginBottom: "10px" }}                            
                             variant="outlined" size="small">     
-                            view user
+                            {buttonText}
                         </Button>
                     </Link>
                 </div>
