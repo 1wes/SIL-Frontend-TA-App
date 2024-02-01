@@ -57,7 +57,7 @@ const UserAlbumDetails = ({ user }) => {
 
     return (
         <li key={user.id}>
-            <UserCard name={user.name} username={user.username} email={user.email} noOfAlbums={totalAlbums} albumsLink={`/users/${user.id}`} />
+            <UserCard name={user.name} noOfAlbums={totalAlbums} albumsLink={`/users/${user.id}`} />
         </li>
     )
 }
