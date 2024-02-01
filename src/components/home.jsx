@@ -2,7 +2,7 @@ import { Fragment, useState, useEffect } from "react";
 
 import './home.css'
 
-import withAuthRedirect from './redirect';
+import useAuthRedirection from "../hooks/useAuthRedirection";
 
 import axios from "../utils/axios";
 import useSWR from 'swr';
@@ -12,6 +12,8 @@ import UserCard from "./user-card";
 const fetcher=url=>axios.get(url).then(response=>response.data)
 
 const Users = () => {
+
+    useAuthRedirection();
 
     const [users, setUsers] = useState([]);
 
@@ -60,4 +62,4 @@ const UserAlbumDetails = ({ user }) => {
     )
 }
 
-export default withAuthRedirect(Users);
+export default Users;

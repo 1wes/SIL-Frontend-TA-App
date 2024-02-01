@@ -5,9 +5,11 @@ import { useNavigate} from "react-router-dom";
 
 import './login.css'
 
-import withAuthRedirect from "./redirect";
+import useAuthRedirection from "../hooks/useAuthRedirection";
 
 const LoginPage = () => {
+
+    useAuthRedirection();
 
     const navigate = useNavigate();
 
@@ -34,4 +36,4 @@ const LoginPage = () => {
         </Fragment>
     )
 }
-export default withAuthRedirect(LoginPage);
+export default LoginPage;
