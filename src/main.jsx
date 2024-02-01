@@ -8,6 +8,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google'
 import Users from './components/home.jsx'
 import User from './components/user.jsx'
 import Album from './components/album.jsx'
+import Photo from './components/photo.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <HashRouter future={{ v7_startTransition: true }}>
@@ -17,7 +18,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/login' element={<LoginPage />} ></Route>
         <Route path='/home' element={<Users />} ></Route>
         <Route path='/users/:id' element={<User />} ></Route>
-        <Route path='/users/:userId/albums/:albumId' element={<Album/>} ></Route>
+        <Route path='/users/:userId/albums/:albumId' element={<Album />} ></Route>
+        <Route path='/users/:userId/albums/:albumId/photos/:id' element={<Photo/>} ></Route>
       </Routes>
     </GoogleOAuthProvider>
   </HashRouter>,
