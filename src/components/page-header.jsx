@@ -4,7 +4,7 @@ const PageHeader = ({header}) => {
     
     return (
         <Fragment>
-            <h1>
+            <h1 className='page-header'> 
                 {header}
             </h1>
         </Fragment>
