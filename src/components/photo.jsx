@@ -56,16 +56,30 @@ const Photo = () => {
         editRef.current.focus();        
     }
 
-    const changePhotoTitle = (e => {
-        
-        e.preventDefault();
-
-    });
-
     const cancelEditing = () => {
         
         setEdit(true);
     }
+
+    const changePhotoTitle = (e => {
+        
+        e.preventDefault();
+
+        setPhoto({
+            ...photo,
+            title: newTitle
+        });
+
+        axios.put(`http://localhost:5000/api/photos/edit/${photoId}`, { newTitle }).then((res) => {
+            
+            console.log(res);
+        }).catch((err) => {
+            console.log(err)
+        })
+
+        setEdit(true)
+    });
+
 
     return (
         <Fragment>
@@ -79,7 +93,7 @@ const Photo = () => {
                             
                             {!edit && <div className='submit-btns'>
                                 <Button variant='outlined' color='error' style={{ textTransform: "capitalize" }} onClick={cancelEditing} >Cancel</Button>
-                                <Button variant='contained' color='success' style={{ textTransform: "capitalize" }}>Save New Title</Button>
+                                <Button variant='contained' type='submit' color='success' style={{ textTransform: "capitalize" }}>Save New Title</Button>
                             </div>}
                         </form>
                     </span>
