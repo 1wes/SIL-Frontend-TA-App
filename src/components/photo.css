@@ -57,7 +57,7 @@ input{
     font-size: 20px;
     height: 100%;
     word-wrap: break-word;
-    
+    color: #FFF5E4;
 }
 
 input:focus{
