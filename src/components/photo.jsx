@@ -28,7 +28,7 @@ const Photo = () => {
 
     const photoId = useParams().id;
 
-    const { data: photoDetails } = useSWR(`http://localhost:5000/api/photos/${photoId}`, fetcher);
+    const { data: photoDetails } = useSWR(`https://sil-ta-api.onrender.com/api/photos/${photoId}`, fetcher);
 
     const editRef = useRef(null);
 
