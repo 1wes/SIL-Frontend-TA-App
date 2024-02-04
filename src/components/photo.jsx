@@ -111,44 +111,4 @@ const Photo = () => {
     )
 }
 
-// const Image = ({ photo }) => {
-    
-//     const [imageUrl, setImageUrl] = useState(null);
-
-//     useEffect(() => {
-        
-//         let isMounted = true;
-
-//         const importImage = async () => {
-            
-//             try {
-//                 const { default: imageModule } = await import(`${photo?photo.url:""}`);
-
-//                 if (isMounted) {
-//                     setImageUrl(imageModule);
-//                 }
-
-//             } catch (error) {
-//                 console.log(`Error importing image`, error);
-//             }
-//         }
-
-//         importImage();
-
-//         return (() => {
-            
-//             isMounted = false;
-//         })
-//     }, [photo?photo.url:""]);
-    
-//     return (
-//         <Fragment>
-//             <div className='photo'>
-//                 <img src={imageUrl} />
-//             </div>
-//         </Fragment>
-//     )
-// }
-
-
 export default Photo;
