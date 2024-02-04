@@ -27,7 +27,7 @@ const User = () => {
 
     const userId = useParams();
 
-    const { data: userDetails } = useSWR(`http://localhost:5000/api/users/${userId.id}`, fetcher);
+    const { data: userDetails } = useSWR(`https://sil-ta-api.onrender.com/api/users/${userId.id}`, fetcher);
     
     useEffect(() => {
         
@@ -69,7 +69,7 @@ const User = () => {
 
 const UserAlbums = ({userId}) => {
     
-    const { data: albums } = useSWR(`http://localhost:5000/api/users/${userId.id}/albums`, fetcher);
+    const { data: albums } = useSWR(`https://sil-ta-api.onrender.com/api/users/${userId.id}/albums`, fetcher);
 
     const albumsList = albums ? albums.map((album) => {
         

@@ -70,7 +70,7 @@ const Photo = () => {
             title: newTitle
         });
 
-        axios.put(`http://localhost:5000/api/photos/edit/${photoId}`, { newTitle }).then((res) => {
+        axios.put(`https://sil-ta-api.onrender.com/api/photos/edit/${photoId}`, { newTitle }).then((res) => {
             
             console.log(res);
         }).catch((err) => {

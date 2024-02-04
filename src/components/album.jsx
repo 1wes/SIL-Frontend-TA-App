@@ -25,8 +25,8 @@ const Album = () => {
     const userId = useParams().userId;
     const albumId = useParams().albumId;
 
-    const { data: albumDetails } = useSWR(`http://localhost:5000/api/albums/${albumId}`, fetcher);
-    const { data: photosList } = useSWR(`http://localhost:5000/api/photos/album/${albumId}`, fetcher);
+    const { data: albumDetails } = useSWR(`https://sil-ta-api.onrender.com/api/albums/${albumId}`, fetcher);
+    const { data: photosList } = useSWR(`https://sil-ta-api.onrender.com/api/photos/album/${albumId}`, fetcher);
 
     useEffect(() => {
         

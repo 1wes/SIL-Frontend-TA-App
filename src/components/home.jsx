@@ -20,7 +20,7 @@ const Users = () => {
     const [users, setUsers] = useState([]);
 
     // fetch all users
-    const { data } = useSWR(`http://localhost:5000/api/users`, fetcher);
+    const { data } = useSWR(`https://sil-ta-api.onrender.com/api/users`, fetcher);
 
     useEffect(() => {
 
@@ -51,7 +51,7 @@ const Users = () => {
 const UserAlbumDetails = ({ user }) => {
     
     // fetch a specific user's albums
-    const { data: albums } = useSWR(`http://localhost:5000/api/users/${user.id}/albums`, fetcher);
+    const { data: albums } = useSWR(`https://sil-ta-api.onrender.com/api/users/${user.id}/albums`, fetcher);
 
     const totalAlbums = albums ? albums.length : 0;
 
