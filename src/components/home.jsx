@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 
 import './home.css'
 
@@ -20,15 +20,15 @@ const Users = () => {
     const [users, setUsers] = useState([]);
 
     // fetch all users
-    const { data } = useSWR(`https://sil-ta-api.onrender.com/api/users`, fetcher);
+    const { data:allUsers } = useSWR(`https://sil-ta-api.onrender.com/api/users`, fetcher);
 
     useEffect(() => {
 
-        if (data) {
-            setUsers(data);
+        if (allUsers) {
+            setUsers(allUsers);
         }
         
-    }, [data]);
+    }, [allUsers]);
 
     const usersList = users.map((user) => (
 
