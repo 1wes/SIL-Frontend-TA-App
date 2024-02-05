@@ -3,7 +3,7 @@
 ## What is SIL-Frontend-TA-APP
 
 SIL-Frontend-TA-APP is a web apllication that allows users to view other users' pictures, which are sorted into albums. The application leverages Google's OAuth authorization 
-mechanism to enable user authorization. Once sign up is successful, the user session is stored within the application. There are four main pages of the application:
+mechanism to enable user authorization. Once sign in is successful, the user session is stored within the application. These are the main pages of the application:
 * Landing page 
     - Contains a brief description of what the application does. 
 
