@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import { GoogleLogin } from "@react-oauth/google";
 
 import { useNavigate} from "react-router-dom";
@@ -29,7 +29,7 @@ const LoginPage = () => {
                     </h3>
                     <div className="google-login-btn">
                         <GoogleLogin onSuccess={handleSuccess} onError={() => { console.log("Login Failed") }} text="signin_with" type="standard"
-                        theme="filled_blue"  size="large" shape="pill" logo_alignment="center"  />
+                        theme="filled_blue"  size="large" shape="pill" logo_alignment="center" data-testid="google-login-btn" />
                     </div>
                 </section>
             </main>
