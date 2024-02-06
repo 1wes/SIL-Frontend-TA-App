@@ -15,7 +15,7 @@ const UserCard = ({name, noOfAlbums, albumsLink, buttonText}) => {
             <div className="user-card">
                 <h4 className="name" >{ name }</h4>
                 <ul className="list">
-                    <li><i><BiPhotoAlbum/></i><span> {noOfAlbums} Albums</span></li>
+                    <li><i><BiPhotoAlbum/></i><span className="no-of-albums"> {noOfAlbums} Albums</span></li>
                 </ul>
                 <div className="centered-button">
                     <Link to={albumsLink} >
