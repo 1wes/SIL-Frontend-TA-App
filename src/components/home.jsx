@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment } from "react";
 
 import './home.css'
 
@@ -16,8 +16,6 @@ const fetcher=url=>axiosInstance.get(url).then(response=>response.data)
 const Users = () => {
 
     useAuthRedirection();
-
-    const [users, setUsers] = useState([]);
 
     // fetch all users
     const { data:allUsers } = useSWR(`https://sil-ta-api.onrender.com/api/users`, fetcher);
