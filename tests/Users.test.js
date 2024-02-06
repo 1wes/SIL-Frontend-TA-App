@@ -1,9 +1,9 @@
+/* eslint-disable no-undef */
 import React from "react";
 import { render, screen, waitFor } from "./setUpTests";
 
 import Users from "../src/components/home";
 import * as swr from 'swr';
-import { mock } from "node:test";
 
 jest.mock('swr');
 
@@ -61,7 +61,7 @@ describe('Users Component', () => {
       });
   
       // Mock the useSWR hook to return albums data for each user
-      swr.default.mockImplementation((key, fetcher) => {
+      swr.default.mockImplementation((key) => {
         const userId = key.split('/').pop();
         return { data: mockAlbums[userId] || [] };
       });

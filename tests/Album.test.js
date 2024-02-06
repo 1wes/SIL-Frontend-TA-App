@@ -1,19 +1,14 @@
+/* eslint-disable no-undef */
 import React from "react";
 import { render, screen, waitFor } from "./setUpTests";
 import Album from "../src/components/album";
 import * as swr from "swr";
+import useSWR from "swr";
 
 jest.mock("swr");
 
 // Mock album data
 const mockAlbum = { id: 1, title: 'Album 1' };
-
-// mock photos
-const mockPhotos = [
-    { id: 1, title: 'Photo 1', albumId: '1' },
-    { id: 2, title: 'Photo 2', albumId: '1' },
-    { id: 3, title: 'Photo 3', albumId: '1' },
-  ];
 
 // Mock useParams
 jest.mock("react-router-dom", () => ({
@@ -24,14 +19,15 @@ jest.mock("react-router-dom", () => ({
 describe("Album Component", () => {
 
   test("should fetch the album and display its name", async () => {
-    // Custom implementation of useSWR
-    swr.default = jest.fn((key, fetcher) => {
-      if (typeof fetcher === "function") {
-        return { data: mockAlbum, error: null };
-      } else {
-        throw new Error("Invalid fetcher function");
-      }
+
+    jest.mock('swr', () => {
+      return {
+        __esModule: true, 
+        default: jest.fn(), 
+      };
     });
+
+    useSWR.mockReturnValueOnce({ data: mockAlbum, error: null });
 
     // Render the component
     render(<Album />);

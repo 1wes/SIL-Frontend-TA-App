@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from "react";
 import { render, screen, waitFor } from "./setUpTests";
 import Photo from "../src/components/photo";
