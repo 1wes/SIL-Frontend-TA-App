@@ -49,7 +49,12 @@ const Photo = () => {
 
     const makeEditable = () => {
 
-        setNewTitle((prev)=>prev=photo.title)
+        setNewTitle((prev) => {
+            
+            prev=photo.title
+
+            return photo.title
+        })
 
         setEdit(false);
 
