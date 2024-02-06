@@ -13,9 +13,9 @@ const LandingPage = () => {
         <Fragment>
             <main className='main-landing-page'>
                 <section className='hero-punchline'>
-                    <div className='punchline'>
-                        Need Your and Your Friends' Photos In One Place?.
-                    </div>
+                    <h1 className='punchline'>
+                        Need Your Photos and Your Friend&apos;s In One Place?.
+                    </h1>
                     <p className='tagline'>
                         Our Application sorts that out for you. View all photos arranged per album, per user.
                     </p>
