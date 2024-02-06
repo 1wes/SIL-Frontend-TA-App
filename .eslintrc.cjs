@@ -19,7 +19,8 @@ module.exports= {
   ],
   plugins: ['react', 'react-hooks'],
   rules: {
-    'no-console': 'warn',
+    'no-console': 'off',
+    "react/prop-types": "off"
   },
   settings: {
     react: {
