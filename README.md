@@ -94,4 +94,19 @@ The server used for this application is Vite, hence the application will open up
 
 [def4]: http://localhost:5173
 
+## Tests
+
+This application runs unit tests that ensure code correctness and reliability by verifying that each component or feature behaves as expected
+
+To run the tests manually, execute the following command:
+
+```
+
+npm test
+```
+
+This runs all the unit tests within the project and outputs the results.
+
+This project is also intergrated with a continous intergration service (Github Actions), which automatically runs tests once changes are pushed to the repository.
+ 
 
