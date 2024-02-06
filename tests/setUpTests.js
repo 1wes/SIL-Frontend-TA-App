@@ -9,6 +9,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useNavigate: () => jest.fn(),
+  useLocation: ()=>jest.fn(),
 }));
 
 // Wrapping tests with Router and GoogleOAuthProvider
