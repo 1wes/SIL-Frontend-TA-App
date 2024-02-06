@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect, useRef } from 'react';
+import React, { Fragment, useState, useEffect, useRef } from 'react';
 
 import useAuthRedirection from '../hooks/useAuthRedirection';
 
@@ -104,7 +104,7 @@ const Photo = () => {
                     </span>
                 </div>
                 <div className='photo'>
-                    <img src={photo ? photo.url : ""} />
+                    <img src={photo && photo.url} alt='retrievedPhoto' />
                 </div>
             </main>
         </Fragment>
