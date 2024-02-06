@@ -4,14 +4,14 @@ import './home.css'
 
 import useAuthRedirection from "../hooks/useAuthRedirection";
 
-import axios from "../utils/axios";
-import useSWR from 'swr';
+import axiosInstance from "../utils/axios";
+import useSWR from "swr";
 
 import UserCard from "./user-card";
 
 import PageHeader from "./page-header";
 
-const fetcher=url=>axios.get(url).then(response=>response.data)
+const fetcher=url=>axiosInstance.get(url).then(response=>response.data)
 
 const Users = () => {
 
@@ -21,26 +21,15 @@ const Users = () => {
 
     // fetch all users
     const { data:allUsers } = useSWR(`https://sil-ta-api.onrender.com/api/users`, fetcher);
-
-    useEffect(() => {
-
-        if (allUsers) {
-            setUsers(allUsers);
-        }
-        
-    }, [allUsers]);
-
-    const usersList = users.map((user) => (
-
-        <UserAlbumDetails key={user.id} user={user} />
-    ))
     
     return (
         <Fragment>
             <main className="users-component">
                 <PageHeader header={`Users`} />
                 <ul className="user-cards">
-                    {usersList}
+                    {allUsers && allUsers.map((user) => (
+                        <UserAlbumDetails key={user.id} user={user} />                        
+                    ))}                                    
                 </ul>
             </main>
         </Fragment>
